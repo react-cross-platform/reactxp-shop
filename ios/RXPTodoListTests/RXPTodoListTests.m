@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2015-present, Facebook, Inc.
+ * Copyright: Microsoft 2017
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -16,11 +16,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React Native!"
 
-@interface RXPHelloWorldTests : XCTestCase
+@interface RXPTodoListTests : XCTestCase
 
 @end
 
-@implementation RXPHelloWorldTests
+@implementation RXPTodoListTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {
