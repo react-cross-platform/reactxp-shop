@@ -38,6 +38,7 @@ android/app/build
 *.iml
 
 # TypeScript
+/dist/
 
 # VSCode
 .vscode/

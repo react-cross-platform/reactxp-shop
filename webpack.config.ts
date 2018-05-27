@@ -1,7 +1,7 @@
 import * as webpack from 'webpack';
 
 const config: webpack.Configuration = {
-    entry: "./src/index-web.tsx",
+    entry: "./src/index.web.tsx",
     mode: "development",
     output: {
         filename: "bundle.js",
