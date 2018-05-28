@@ -2,6 +2,8 @@ import { ApolloProvider } from "react-apollo";
 import * as RX from "reactxp";
 
 import client from "../graphqlClient";
+import Catalog from "../modules/catalog/Catalog/Catalog";
+import s from "./styles";
 
 abstract class App {
   init() {
@@ -12,14 +14,8 @@ abstract class App {
   private _renderRootView() {
     return (
       <ApolloProvider client={client}>
-        <RX.View
-          style={{
-            flex: 1,
-            justifyContent: "center",
-            alignItems: "center"
-          }}
-        >
-          <RX.Text>Hello Cross-Platform app!</RX.Text>
+        <RX.View style={s.wrapper}>
+          <Catalog />
         </RX.View>
       </ApolloProvider>
     );
