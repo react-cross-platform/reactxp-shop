@@ -11,7 +11,7 @@
     "ios": "node node_modules/react-native/local-cli/cli.js run-ios"
   },
   "devDependencies": {
-    "@types/node": "^9.6.2",
+    "@types/prop-types": "^15.5.3",
     "@types/webpack": "^4.4.0",
     "awesome-typescript-loader": "^5.0.0",
     "source-map-loader": "^0.2.3",
@@ -21,8 +21,13 @@
     "webpack-cli": "^2.0.13"
   },
   "dependencies": {
+    "apollo-client-preset": "^1.0.8",
+    "apollo-link-context": "^1.0.8",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
     "nosqlprovider": "^0.6.10",
     "react": "^16.3.1",
+    "react-apollo": "^2.1.4",
     "react-dom": "^16.3.1",
     "react-native": "^0.54.0",
     "react-native-sqlite-storage": "^3.3.1",

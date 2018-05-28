@@ -1,4 +1,7 @@
+import { ApolloProvider } from "react-apollo";
 import * as RX from "reactxp";
+
+import client from "../graphqlClient";
 
 abstract class App {
   init() {
@@ -8,15 +11,17 @@ abstract class App {
 
   private _renderRootView() {
     return (
-      <RX.View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center"
-        }}
-      >
-        <RX.Text>Hello Cross-Platform app!</RX.Text>
-      </RX.View>
+      <ApolloProvider client={client}>
+        <RX.View
+          style={{
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center"
+          }}
+        >
+          <RX.Text>Hello Cross-Platform app!</RX.Text>
+        </RX.View>
+      </ApolloProvider>
     );
   }
 }
