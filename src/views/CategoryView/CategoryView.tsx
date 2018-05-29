@@ -20,8 +20,8 @@ class CategoryView extends RX.Component<Props, State> {
       <RX.View style={s.wrapper}>
         <RX.ScrollView>
           {allProducts!.products!.map(product => (
-            <RX.Text key={product.id} style={s.product}>
-              {product.brand.name} {product.name}
+            <RX.Text key={product!.id!} style={s.product}>
+              {product!.brand!.name} {product!.name}
             </RX.Text>
           ))}
         </RX.ScrollView>

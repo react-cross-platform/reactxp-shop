@@ -4,10 +4,10 @@ import * as RX from "reactxp";
 
 import { navigate } from "../../../router/utils.native";
 import { getCatalog } from "../../utils";
-import { Props } from "./PropTypes";
+import { Props, State } from "./PropTypes";
 import s from "./styles";
 
-class Catalog extends RX.Component<Props, {}> {
+class Catalog extends RX.Component<Props, State> {
   render() {
     const { data } = this.props;
     if (data.loading) {
@@ -18,7 +18,7 @@ class Catalog extends RX.Component<Props, {}> {
       );
     }
     const { categories } = data;
-    const catalog = getCatalog(categories);
+    const catalog = getCatalog(categories!);
     const { startCategories, childrenMap } = catalog;
     return (
       <RX.View style={s.wrapper}>
@@ -36,7 +36,7 @@ class Catalog extends RX.Component<Props, {}> {
                       <RX.Image
                         resizeMode="contain"
                         style={s.category.image}
-                        source={category.image.src}
+                        source={category.image!.src!}
                       />
                       <RX.Text style={s.category.name} key={category.id}>
                         {category.name}
@@ -76,4 +76,4 @@ const categoriesQuery = gql`
   }
 `;
 
-export default graphql(categoriesQuery)(Catalog) as any;
+export default graphql(categoriesQuery)(Catalog as any);
