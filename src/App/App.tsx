@@ -3,7 +3,6 @@ import * as RX from "reactxp";
 
 import client from "../graphqlClient";
 import Catalog from "../modules/catalog/Catalog/Catalog";
-import s from "./styles";
 
 abstract class App {
   init() {
@@ -11,12 +10,10 @@ abstract class App {
     RX.UserInterface.setMainView(this._renderRootView());
   }
 
-  private _renderRootView() {
+  protected _renderRootView() {
     return (
       <ApolloProvider client={client}>
-        <RX.View style={s.wrapper}>
-          <Catalog />
-        </RX.View>
+        <Catalog />
       </ApolloProvider>
     );
   }

@@ -1,11 +1,15 @@
 import * as RX from "reactxp";
 
+import theme from "../../../theme";
+
 const { width } = RX.UserInterface.measureWindow();
 
 export default {
-  wrapper: RX.Styles.createScrollViewStyle({
+  wrapper: RX.Styles.createViewStyle({
     flex: 1,
-    backgroundColor: "#f5f5f9"
+    backgroundColor: theme.backgroundColor,
+    justifyContent: "center",
+    alignItems: "center"
   }),
   subCatalog: {
     wrapper: RX.Styles.createViewStyle({
@@ -30,7 +34,7 @@ export default {
       padding: 5,
       borderRadius: 5,
       borderWidth: 1,
-      borderColor: "#ddd"
+      borderColor: theme.card.borderColor
     }),
     name: RX.Styles.createTextStyle({
       textAlign: "center"
