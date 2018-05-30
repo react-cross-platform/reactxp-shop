@@ -1,7 +1,7 @@
 import { QueryResult } from "react-apollo";
 
 import { CategoryType } from "../../../typings/types";
-import { NavigationProps } from "../../../router/router";
+import { NavigationProps } from "../../../router/index";
 
 interface OwnProps {}
 

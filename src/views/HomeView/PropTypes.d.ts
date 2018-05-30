@@ -1,4 +1,4 @@
-import { NavigationProps } from "../../router/router";
+import { NavigationProps } from "../../router/index";
 
 interface OwnProps {}
 
