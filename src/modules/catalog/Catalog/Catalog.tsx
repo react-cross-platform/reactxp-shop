@@ -2,10 +2,10 @@ import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 import * as RX from "reactxp";
 
-import { navigate } from "../../../router/utils.native";
 import { getCatalog } from "../../utils";
 import { Props, State } from "./PropTypes";
 import s from "./styles";
+import { navigate } from "../../../router/utils";
 
 class Catalog extends RX.Component<Props, State> {
   render() {
@@ -30,7 +30,9 @@ class Catalog extends RX.Component<Props, State> {
                 {childrenMap[parent.id].map(category => (
                   <RX.View key={category.id} style={s.category.wrapper}>
                     <RX.View
-                      onPress={() => this.onNavigation(category.id)}
+                      onPress={() =>
+                        navigate("/category/:id", { id: category.id })
+                      }
                       style={s.category.card}
                     >
                       <RX.Image
@@ -51,13 +53,6 @@ class Catalog extends RX.Component<Props, State> {
       </RX.View>
     );
   }
-
-  private onNavigation = (id: string) => {
-    if (RX.Platform.getType() == "web") {
-    } else {
-      return navigate("Category", { id });
-    }
-  };
 }
 
 const categoriesQuery = gql`

@@ -1,6 +1,6 @@
 import { QueryResult } from "react-apollo";
 
-import { NavigationProps } from "../../router/router";
+import { NavigationProps } from "../../router/index";
 import { AllProductsType } from "../../typings/types";
 
 interface OwnProps {}

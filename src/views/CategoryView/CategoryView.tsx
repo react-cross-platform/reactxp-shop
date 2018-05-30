@@ -2,6 +2,7 @@ import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 import * as RX from "reactxp";
 
+import { getCurrentNavigationParams } from "../../router/utils";
 import { Props, State } from "./PropTypes";
 import s from "./styles";
 
@@ -17,15 +18,15 @@ class CategoryView extends RX.Component<Props, State> {
     }
     const { allProducts } = data;
     return (
-      <RX.View style={s.wrapper}>
-        <RX.ScrollView>
+      <RX.ScrollView>
+        <RX.View style={s.wrapper}>
           {allProducts!.products!.map(product => (
             <RX.Text key={product!.id!} style={s.product}>
               {product!.brand!.name} {product!.name}
             </RX.Text>
           ))}
-        </RX.ScrollView>
-      </RX.View>
+        </RX.View>
+      </RX.ScrollView>
     );
   }
 }
@@ -49,7 +50,7 @@ const options = {
   options: (props: any) => {
     return {
       variables: {
-        categoryId: props.navigation.state.params.id,
+        categoryId: getCurrentNavigationParams(props).id,
         first: 10,
         offset: 0
       }

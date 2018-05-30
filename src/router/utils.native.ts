@@ -2,16 +2,19 @@
  * Solution to use navigation outside of React component
  * https://github.com/react-navigation/react-navigation/issues/1439
  */
-
 import { NavigationActions } from "react-navigation";
+
+import { PathNames } from ".";
+import { NavigationProps } from "./index.d.native";
+
 
 let _container: any;
 
-export function setContainer(container: Object) {
+export const setContainer = (container: Object) => {
   _container = container;
-}
+};
 
-export function reset(routeName: string, params?: any) {
+export const reset = (routeName: string, params?: any) => {
   _container.dispatch(
     NavigationActions.reset({
       index: 0,
@@ -24,9 +27,9 @@ export function reset(routeName: string, params?: any) {
       ]
     })
   );
-}
+};
 
-export function navigate(routeName: string, params?: any) {
+export const navigate = (routeName: PathNames, params?: any) => {
   _container.dispatch(
     NavigationActions.navigate({
       type: "Navigation/NAVIGATE",
@@ -34,7 +37,7 @@ export function navigate(routeName: string, params?: any) {
       params
     })
   );
-}
+};
 
 export function navigateDeep(actions: { routeName: string; params?: any }[]) {
   _container.dispatch(
@@ -57,3 +60,7 @@ export function getCurrentRoute(): any {
   }
   return _container.state.nav.routes[_container.state.nav.index] || null;
 }
+
+export const getCurrentNavigationParams = (props: NavigationProps) => {
+  return props.navigation.state.params;
+};
