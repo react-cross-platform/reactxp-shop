@@ -4,6 +4,7 @@ import CategoryView from "../views/CategoryView/CategoryView";
 import HomeView from "../views/HomeView/HomeView";
 import history from "./history.web";
 import { RouteInterface } from "./index";
+import ProductView from "../views/ProductView/ProductView";
 
 export const routes: RouteInterface[] = [
   {
@@ -14,6 +15,10 @@ export const routes: RouteInterface[] = [
   {
     path: "/category/:id",
     component: CategoryView
+  },
+  {
+    path: "/product/:id",
+    component: ProductView
   }
 ];
 

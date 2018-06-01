@@ -2,9 +2,10 @@ import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 import * as RX from "reactxp";
 
-import { getCurrentNavigationParams } from "../../router/utils";
+import { getCurrentNavigationParams, navigate } from "../../router/utils";
 import { Props, State } from "./PropTypes";
 import s from "./styles";
+
 
 class CategoryView extends RX.Component<Props, State> {
   render() {
@@ -21,9 +22,28 @@ class CategoryView extends RX.Component<Props, State> {
       <RX.ScrollView>
         <RX.View style={s.wrapper}>
           {allProducts!.products!.map(product => (
-            <RX.Text key={product!.id!} style={s.product}>
-              {product!.brand!.name} {product!.name}
-            </RX.Text>
+            
+            <RX.View key={product!.id!} style={s.product.wrapper}>
+              <RX.View 
+                onPress={() =>
+                  navigate("/product/:id", { id: product!.id })
+                }
+                style={s.product.card}
+              >
+                <RX.Image
+                  resizeMode="contain"
+                  style={s.product.image}
+                  source={product!.images![0]!.src!}
+                />
+                <RX.Text style={s.product.name}>{product!.name}</RX.Text>
+                <RX.View style={s.product.rowStyle}>
+                  <RX.Text style={s.product.brand}>{product!.brand!.name}</RX.Text>
+                  <RX.Text style={s.product.article}>{product!.subProducts[0]!.article}</RX.Text>
+                </RX.View>
+                
+                <RX.Text style={s.product.price}>{product!.subProducts[0]!.price} грн.</RX.Text>
+              </RX.View>
+            </RX.View>
           ))}
         </RX.View>
       </RX.ScrollView>
@@ -40,6 +60,13 @@ const allProductsQuery = gql`
         brand {
           id
           name
+        }
+        images {
+          src
+        }
+        subProducts {
+          price,
+          article
         }
       }
     }

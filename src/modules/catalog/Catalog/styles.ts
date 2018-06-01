@@ -17,6 +17,7 @@ export default {
       flexWrap: "wrap"
     }),
     name: RX.Styles.createTextStyle({
+      fontSize: 24,
       fontWeight: "bold",
       padding: 20,
       textAlign: "center"
@@ -37,10 +38,13 @@ export default {
       borderColor: theme.card.borderColor
     }),
     name: RX.Styles.createTextStyle({
-      textAlign: "center"
+      fontSize: 20,
+      textAlign: "center",
+      marginTop: 8,
+      marginBottom: 8
     }),
     image: RX.Styles.createImageStyle({
-      height: 50
+      height: 100
     })
   }
 };

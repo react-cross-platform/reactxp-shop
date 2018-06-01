@@ -12,7 +12,7 @@ export const getCatalog = (categories: CategoryType[]): Catalog => {
   };
   for (const category of categories!) {
     if (category!.parent) {
-      const key = category.parent.id;
+      const key = category.parent!.id;
       if (!(key in catalog.childrenMap)) {
         catalog.childrenMap[key] = [];
       }

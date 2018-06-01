@@ -1,4 +1,4 @@
-export type PathNames = "/" | "/category/:id";
+export type PathNames = "/" | "/category/:id" | "/product/:id";
 
 export interface NavigationProps {
   match?: any;
