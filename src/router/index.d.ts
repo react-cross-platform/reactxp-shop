@@ -1,4 +1,11 @@
-export type PathNames = "/" | "/category/:id" | "/product/:id";
+import { ParseOptions } from "path-to-regexp";
+
+export type Pathes = "/" | "/category/:id" | "/product/:id";
+
+export interface Url {
+  path: Pathes;
+  params?: object;
+}
 
 export interface NavigationProps {
   match?: any;
@@ -7,7 +14,12 @@ export interface NavigationProps {
 }
 
 interface RouteInterface {
-  path: PathNames;
+  path: Pathes;
   exact?: boolean;
   component: any;
+}
+
+export interface Url {
+  path: Pathes;
+  params?: object;
 }

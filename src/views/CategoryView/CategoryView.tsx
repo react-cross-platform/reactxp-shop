@@ -2,10 +2,11 @@ import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 import * as RX from "reactxp";
 
+import Link from "../../modules/common/Link/Link";
+import { Url } from "../../router";
 import { getCurrentNavigationParams, navigate } from "../../router/utils";
 import { Props, State } from "./PropTypes";
 import s from "./styles";
-
 
 class CategoryView extends RX.Component<Props, State> {
   render() {
@@ -22,12 +23,9 @@ class CategoryView extends RX.Component<Props, State> {
       <RX.ScrollView>
         <RX.View style={s.wrapper}>
           {allProducts!.products!.map(product => (
-            
             <RX.View key={product!.id!} style={s.product.wrapper}>
-              <RX.View 
-                onPress={() =>
-                  navigate("/product/:id", { id: product!.id })
-                }
+              <RX.View
+                onPress={() => navigate(this.getProductLinkProps(product))}
                 style={s.product.card}
               >
                 <RX.Image
@@ -36,12 +34,18 @@ class CategoryView extends RX.Component<Props, State> {
                   source={product!.images![0]!.src!}
                 />
                 <RX.Text style={s.product.name}>{product!.name}</RX.Text>
+
                 <RX.View style={s.product.rowStyle}>
-                  <RX.Text style={s.product.brand}>{product!.brand!.name}</RX.Text>
-                  <RX.Text style={s.product.article}>{product!.subProducts[0]!.article}</RX.Text>
+                  <Link {...this.getProductLinkProps(product)}>
+                    {`${product!.brand!.name} ${
+                      product!.subProducts[0]!.article
+                    }`}
+                  </Link>
                 </RX.View>
-                
-                <RX.Text style={s.product.price}>{product!.subProducts[0]!.price} грн.</RX.Text>
+
+                <RX.Text style={s.product.price}>
+                  {product!.subProducts[0]!.price} грн.
+                </RX.Text>
               </RX.View>
             </RX.View>
           ))}
@@ -49,6 +53,15 @@ class CategoryView extends RX.Component<Props, State> {
       </RX.ScrollView>
     );
   }
+
+  private getProductLinkProps = (product: any): Url => {
+    return {
+      path: "/product/:id",
+      params: {
+        id: product!.id
+      }
+    };
+  };
 }
 
 const allProductsQuery = gql`
@@ -65,7 +78,7 @@ const allProductsQuery = gql`
           src
         }
         subProducts {
-          price,
+          price
           article
         }
       }

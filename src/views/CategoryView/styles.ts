@@ -41,7 +41,7 @@ export default {
     }),
     article: RX.Styles.createTextStyle({
     }),
-    price: RX.Styles.createTextStyle({
+    price: RX.Styles.createLinkStyle({
       textAlign: "left",
       fontWeight: "bold",
       fontSize: 18,

@@ -28,7 +28,7 @@ export default {
       flex: 1,
       width: width * 0.5
     }),
-    card: RX.Styles.createViewStyle({
+    card: RX.Styles.createLinkStyle({
       flex: 1,
       backgroundColor: "white",
       margin: 2,
@@ -41,7 +41,9 @@ export default {
       fontSize: 20,
       textAlign: "center",
       marginTop: 8,
-      marginBottom: 8
+      marginBottom: 8,
+      color: "black",
+      textDecorationStyle: "solid"
     }),
     image: RX.Styles.createImageStyle({
       height: 100

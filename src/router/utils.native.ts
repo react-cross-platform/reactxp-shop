@@ -4,9 +4,8 @@
  */
 import { NavigationActions } from "react-navigation";
 
-import { PathNames } from ".";
 import { NavigationProps } from "./index.d.native";
-
+import { Url } from ".";
 
 let _container: any;
 
@@ -29,23 +28,23 @@ export const reset = (routeName: string, params?: any) => {
   );
 };
 
-export const navigate = (routeName: PathNames, params?: any) => {
+export const navigate = (url: Url) => {
   _container.dispatch(
     NavigationActions.navigate({
       type: "Navigation/NAVIGATE",
-      routeName,
-      params
+      routeName: url.path,
+      params: url.params
     })
   );
 };
 
-export function navigateDeep(actions: { routeName: string; params?: any }[]) {
+export function navigateDeep(actions: Url[]) {
   _container.dispatch(
     actions.reduceRight(
       (prevAction, action): any =>
         NavigationActions.navigate({
           type: "Navigation/NAVIGATE",
-          routeName: action.routeName,
+          routeName: action.path,
           params: action.params,
           action: prevAction
         }),

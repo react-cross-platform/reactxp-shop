@@ -2,10 +2,12 @@ import gql from "graphql-tag";
 import { graphql } from "react-apollo";
 import * as RX from "reactxp";
 
+import { Url } from "../../../router";
+import { navigate } from "../../../router/utils";
+import Link from "../../common/Link/Link";
 import { getCatalog } from "../../utils";
 import { Props, State } from "./PropTypes";
 import s from "./styles";
-import { navigate } from "../../../router/utils";
 
 class Catalog extends RX.Component<Props, State> {
   render() {
@@ -31,7 +33,7 @@ class Catalog extends RX.Component<Props, State> {
                   <RX.View key={category.id} style={s.category.wrapper}>
                     <RX.View
                       onPress={() =>
-                        navigate("/category/:id", { id: category.id })
+                        navigate(this.getCategoryLinkProps(category))
                       }
                       style={s.category.card}
                     >
@@ -40,9 +42,13 @@ class Catalog extends RX.Component<Props, State> {
                         style={s.category.image}
                         source={category.image!.src!}
                       />
-                      <RX.Text style={s.category.name} key={category.id}>
+                      <Link
+                        {...this.getCategoryLinkProps(category)}
+                        style={s.category.name}
+                        key={category.id}
+                      >
                         {category.name}
-                      </RX.Text>
+                      </Link>
                     </RX.View>
                   </RX.View>
                 ))}
@@ -53,6 +59,15 @@ class Catalog extends RX.Component<Props, State> {
       </RX.View>
     );
   }
+
+  private getCategoryLinkProps = (category: any): Url => {
+    return {
+      path: "/category/:id",
+      params: {
+        id: category.id
+      }
+    };
+  };
 }
 
 const categoriesQuery = gql`
