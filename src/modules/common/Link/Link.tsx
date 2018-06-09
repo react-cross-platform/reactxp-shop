@@ -1,5 +1,5 @@
 import { compile } from "path-to-regexp";
-import * as RX from "reactxp";
+import RX from "reactxp";
 
 import { navigate } from "../../../router/utils";
 import { Props, State } from "./PropTypes";

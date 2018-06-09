@@ -1,5 +1,5 @@
 import { ApolloProvider } from "react-apollo";
-import * as RX from "reactxp";
+import RX from "reactxp";
 
 import client from "../graphqlClient";
 import router from "../router/router";

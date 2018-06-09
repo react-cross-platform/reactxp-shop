@@ -1,4 +1,4 @@
-import * as RX from "reactxp";
+import RX from "reactxp";
 
 import Catalog from "../../modules/catalog/Catalog/Catalog";
 import { Props, State } from "./PropTypes";

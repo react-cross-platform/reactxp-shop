@@ -1,4 +1,4 @@
-import * as RX from "reactxp";
+import RX from "reactxp";
 
 import { Pathes } from "../../../router";
 

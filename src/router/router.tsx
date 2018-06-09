@@ -1,5 +1,5 @@
 import { Route, Router, Switch } from "react-router";
-import * as RX from "reactxp";
+import RX from "reactxp";
 import CategoryView from "../views/CategoryView/CategoryView";
 import HomeView from "../views/HomeView/HomeView";
 import history from "./history.web";

@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
-import * as RX from "reactxp";
+import RX from "reactxp";
 
 import { getCurrentNavigationParams } from "../../router/utils";
 import { Props, State } from "./PropTypes"

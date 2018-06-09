@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 import { graphql } from "react-apollo";
-import * as RX from "reactxp";
+import RX from "reactxp";
 
 import { Url } from "../../../router";
 import { navigate } from "../../../router/utils";
