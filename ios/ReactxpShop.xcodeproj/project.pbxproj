@@ -536,7 +536,7 @@
 			dependencies = (
 			);
 			name = ReactxpShop;
-			productName = "Todo List";
+			productName = "ReactXP Shop";
 			productReference = 13B07F961A680F5B00A75B9A /* ReactxpShop.app */;
 			productType = "com.apple.product-type.application";
 		};
