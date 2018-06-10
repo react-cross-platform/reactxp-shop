@@ -1,4 +1,4 @@
-package com.rxptodolist;
+package com.reactxpshop;
 
 import com.facebook.react.ReactActivity;
 

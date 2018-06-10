@@ -1,4 +1,4 @@
-package com.rxptodolist;
+package com.reactxpshop;
 
 import android.app.Application;
 
