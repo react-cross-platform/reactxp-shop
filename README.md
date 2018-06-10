@@ -67,3 +67,5 @@ The commands in the instructions below assume you are in the root of this repo.
 * build and run project
     * for iOS run `react-native run-ios`
     * for Android run `react-native run-android`
+
+Help wanted! https://github.com/react-cross-platform/reactxp-shop/issues
