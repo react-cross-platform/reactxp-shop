@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "RXPTodoList.app"
-               BlueprintName = "RXPTodoList"
-               ReferencedContainer = "container:RXPTodoList.xcodeproj">
+               BuildableName = "ReactxpShop.app"
+               BlueprintName = "ReactxpShop"
+               ReferencedContainer = "container:ReactxpShop.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "RXPTodoListTests.xctest"
-               BlueprintName = "RXPTodoListTests"
-               ReferencedContainer = "container:RXPTodoList.xcodeproj">
+               BuildableName = "ReactxpShopTests.xctest"
+               BlueprintName = "ReactxpShopTests"
+               ReferencedContainer = "container:ReactxpShop.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "RXPTodoListTests.xctest"
-               BlueprintName = "RXPTodoListTests"
-               ReferencedContainer = "container:RXPTodoList.xcodeproj">
+               BuildableName = "ReactxpShopTests.xctest"
+               BlueprintName = "ReactxpShopTests"
+               ReferencedContainer = "container:ReactxpShop.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "RXPTodoList.app"
-            BlueprintName = "RXPTodoList"
-            ReferencedContainer = "container:RXPTodoList.xcodeproj">
+            BuildableName = "ReactxpShop.app"
+            BlueprintName = "ReactxpShop"
+            ReferencedContainer = "container:ReactxpShop.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "RXPTodoList.app"
-            BlueprintName = "RXPTodoList"
-            ReferencedContainer = "container:RXPTodoList.xcodeproj">
+            BuildableName = "ReactxpShop.app"
+            BlueprintName = "ReactxpShop"
+            ReferencedContainer = "container:ReactxpShop.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "RXPTodoList.app"
-            BlueprintName = "RXPTodoList"
-            ReferencedContainer = "container:RXPTodoList.xcodeproj">
+            BuildableName = "ReactxpShop.app"
+            BlueprintName = "ReactxpShop"
+            ReferencedContainer = "container:ReactxpShop.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
