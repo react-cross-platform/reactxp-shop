@@ -19,6 +19,7 @@
     "awesome-typescript-loader": "^5.0.0",
     "graphql-code-generator": "^0.9.1",
     "graphql-codegen-typescript-template": "^0.9.1",
+    "prettier": "^1.13.7",
     "source-map-loader": "^0.2.3",
     "ts-node": "^6.0.3",
     "typescript": "^2.8.1",
